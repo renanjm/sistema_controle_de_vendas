@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios de Vendas</title>
+    <link rel="stylesheet" href="relatorios.css">
+    <script src="relatorios.js" defer></script>
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2>Relatórios</h2>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="produto.html">Produtos</a></li>
+            <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="funcionarios.html">Funcionários</a></li>
+            <li><a href="fornecedor.html">Fornecedores</a></li>
+            <li><a href="venda.html">Vendas</a></li>
+            <li><a href="relatorios.html">Relatórios</a></li>
+        </ul>
+    </nav>
+</aside>
+
+
+<div id="main-container">
+    <h1>Relatórios de Vendas</h1>
+
+    <div class="filters">
+        <label for="cpf">CPF do Cliente:</label>
+        <input type="text" id="cpf" placeholder="Digite o CPF">
+
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" placeholder="Digite o nome do produto">
+
+        <label for="dataInicio">Data inicio:</label>
+        <input type="date" id="dataInicio">
+
+        <label for="dataFim">Data final:</label>
+        <input type="date" id="dataFim">
+
+        <button onclick="buscarRelatorio()" class="alinhaBtns">Buscar</button>
+    </div>
+
+    <h3>Relatório de Vendas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-vendas">
+            <!-- As vendas filtradas aparecerão aqui -->
+        </tbody>
+    </table>
+    <p id="total-relatorio"></p>
+</div>
+</body>
+</html>

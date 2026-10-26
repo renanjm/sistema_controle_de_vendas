@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Fornecedores</title>
+    <link rel="stylesheet" href="fornecedor.css">
+    <script src="fornecedor.js" defer></script>
+</head>
+<body>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Controle de Fornecedores</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="cliente.html">Clientes</a></li>
+                <li><a href="funcionarios.html">Funcionários</a></li>
+                <li><a href="fornecedor.html">Fornecedores</a></li>
+                <li><a href="venda.html">Vendas</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <div id="main-container">
+            <h1>Cadastro de Fornecedor</h1>
+            <form id="fornecedor-form">
+                <div class="full-box">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" maxlength="18" placeholder="Digite o CNPJ do fornecedor" required>
+                </div>
+                <div class="full-box">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o nome do fornecedor" required>
+                </div>
+                <div class="full-box">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone" required>
+                </div>
+                <div class="full-box">
+                    <input type="submit" value="Cadastrar" class="alinhaBtns">
+                    <input type="reset" value="Limpar" class="alinhaBtns">
+                </div>
+            </form>
+            
+            <h2>Pesquisar Fornecedor</h2>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="text" id="pesquisa-cnpj" maxlength="18" placeholder="Digite o CNPJ para pesquisar" style="flex: 1;">
+                <button type="button" onclick="pesquisarPorCNPJ()" class="alinhaBtns" style="width: auto; padding: 12px 20px;">Pesquisar</button>
+            </div>
+            
+            <h2>Listagem de Fornecedores</h2>
+            <button type="button" onclick="listarFornecedores()" class="alinhaBtns">Listar Todos os Fornecedores</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CNPJ</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-fornecedores">
+                    <!-- Linhas serão preenchidas pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Fornecedor</h2>
+            <form class="modal-form" id="edit-form">
+                <input type="hidden" id="edit-id">
+
+                <label for="edit-nome">Nome:</label>
+                <input type="text" id="edit-nome" required>
+
+                <label for="edit-cnpj">CNPJ:</label>
+                <input type="text" id="edit-cnpj" maxlength="18" required>
+
+                <label for="edit-telefone">Telefone:</label>
+                <input type="text" id="edit-telefone" required>
+
+                <div class="modal-buttons">
+                    <button type="button" class="btn-save" onclick="salvarEdicao()">Salvar</button>
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

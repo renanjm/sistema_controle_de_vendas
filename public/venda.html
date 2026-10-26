@@ -1,0 +1,85 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Controle de Vendas</title>
+        <link rel="stylesheet" href="venda.css">
+        <script src="venda.js" defer></script>
+    </head>
+    <body>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Controle de Vendas</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="cliente.html">Clientes</a></li>
+                    <li><a href="funcionarios.html">Funcionários</a></li>
+                    <li><a href="fornecedor.html">Fornecedores</a></li>
+                    <li><a href="venda.html">Vendas</a></li>
+                    <li><a href="relatorios.html">Relatórios</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <div id="main-container">
+                <h1>Realização de Venda</h1>
+
+                <!-- Busca do Cliente -->
+                <form id="cliente-form">
+                    <div class="full-box">
+                        <label for="cpf-cliente">CPF do Cliente:</label>
+                        <input type="text" id="cpf-cliente" name="cpf-cliente" placeholder="Digite o CPF do cliente" required>
+                        <button type="button" class="alinhaBtns" onclick="buscarCliente()">Buscar Cliente</button>
+                    </div>
+                    <div id="cliente-info"></div>
+                </form>
+
+                <!-- Adicionar Produto -->
+                <form id="produto-form">
+                    <div class="half-box">
+                        <label for="produto-nome">Produto:</label>
+                        <select id="produto-nome" name="produto-nome" required>
+                            <option value="">Selecione o produto</option>
+                            <!-- opções de Produtos preenchidas vai aparecer aqui -->
+                        </select>
+                    </div>
+
+                    <div class="half-box">
+                        <label for="produto-quantidade">Quantidade:</label>
+                        <input type="number" id="produto-quantidade" name="produto-quantidade" placeholder="Quantidade" min="1" value="1" required>
+                    </div>
+                    <button type="button" class="alinhaBtns" onclick="adicionarProdutoAoCarrinho()">Adicionar ao Carrinho</button>
+                </form>
+
+                <!-- Carrinho -->
+                <h2>Carrinho</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Subtotal</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carrinho">
+                        <!-- Preenchido dinamicamente -->
+                    </tbody>
+                </table>
+                <div id="total-venda" data-total="0">Total: R$ 0,00</div>
+
+               <!-- Finalizar Venda -->
+               <button type="button" class="alinhaBtns" onclick="finalizarVenda()">Finalizar Venda</button>
+            </div>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,23 @@
+{
+  "name": "sistema-vendas",
+  "version": "1.0.0",
+  "description": "Sistema web simples de gerenciamento de vendas: produtos, clientes, funcionários, fornecedores, vendas e relatórios.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "vendas",
+    "estoque",
+    "express",
+    "sqlite",
+    "crud"
+  ],
+  "engines": {
+    "node": ">=20.17"
+  },
+  "dependencies": {
+    "express": "^4.22.3",
+    "sqlite3": "^6.0.1"
+  }
+}

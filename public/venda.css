@@ -1,0 +1,371 @@
+body {
+    background-color: #f5f7fa;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+/* SIDEBAR - MESMO ESTILO DA PÁGINA DE CLIENTES */
+.sidebar {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    width: 260px;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-header h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar nav {
+    flex: 1;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar nav ul li {
+    margin: 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    font-size: 1rem;
+    border-left: 4px solid transparent;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left-color: #3498db;
+    transform: translateX(5px);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    margin-left: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    width: calc(100% - 60px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    border-radius: 2px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin: 25px 0 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+/* FORMULÁRIOS */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.full-box {
+    grid-column: span 2;
+}
+
+.half-box {
+    grid-column: span 1;
+}
+
+label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* BOTÕES */
+.alinhaBtns {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.alinhaBtns:hover {
+    background: linear-gradient(135deg, #2980b9, #2573a7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button[type="button"].alinhaBtns {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+button[type="button"].alinhaBtns:hover {
+    background: linear-gradient(135deg, #27ae60, #219653);
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background: #2573a7;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #ecf0f1;
+}
+
+table button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+table button:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-1px);
+}
+
+/* INFO CLIENTE */
+#cliente-info {
+    background: linear-gradient(135deg, #e8f4fd, #d1e9fa);
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+}
+
+#cliente-info p {
+    margin: 8px 0;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* TOTAL DA VENDA */
+#total-venda {
+    text-align: right;
+    font-weight: 700;
+    margin: 20px 0;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border: 2px solid #3498db;
+}
+
+/* BOTÃO TOGGLE PARA MOBILE */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-box, .half-box {
+        grid-column: span 1;
+    }
+
+    #main-container {
+        margin: 15px;
+        padding: 20px;
+        width: calc(100% - 30px);
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th, table td {
+        padding: 8px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-header h2 {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    table {
+        font-size: 0.7rem;
+    }
+
+    table th, table td {
+        padding: 6px 3px;
+    }
+
+    .sidebar nav ul li a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    #total-venda {
+        font-size: 1.2rem;
+    }
+}
